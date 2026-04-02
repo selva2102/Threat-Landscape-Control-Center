@@ -1,0 +1,13 @@
+{
+  "name": "cyber-threat-platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:dashboard": "pnpm --filter dashboard dev",
+    "dev:backend": "python apps/backend/main.py",
+    "lint": "echo \"lint placeholder\""
+  }
+}

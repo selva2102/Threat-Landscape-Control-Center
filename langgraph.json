@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "name": "ctp-orchestrator",
+  "graph": {
+    "nodes": [
+      { "id": "ingest", "type": "tool" },
+      { "id": "analyze", "type": "agent" },
+      { "id": "report", "type": "tool" }
+    ],
+    "edges": [
+      { "from": "ingest", "to": "analyze" },
+      { "from": "analyze", "to": "report" }
+    ]
+  }
+}
