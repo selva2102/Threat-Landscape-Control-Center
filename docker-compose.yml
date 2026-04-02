@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./apps/backend
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+  dashboard:
+    build:
+      context: ./apps/dashboard
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+  honeypot:
+    build:
+      context: ./infra/docker
+      dockerfile: Dockerfile.honeypot
+    ports:
+      - "2222:22"
